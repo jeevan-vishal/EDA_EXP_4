@@ -1,30 +1,29 @@
-# EDA_EXP_4   Titanic Survival Analysis using Univariate Analysis
+# EDA EXP 4:   Titanic Survival Analysis using Univariate Analysis
 
-**Aim**
+### Aim:
 
 To perform univariate analysis on the Titanic dataset to understand the distribution and characteristics of individual variables (such as Age, Sex, Pclass, Fare, and Survived) and to draw insights about passengers and their survival patterns.
 
+### Algorithm:
 
-**Algorithm**
-
-**1)Import Libraries:**
+### 1)Import Libraries:
 
 Load the required Python libraries (pandas, numpy, matplotlib, seaborn).
 
-**2)Load the Dataset:**
+### 2)Load the Dataset:
 
 Read the Titanic dataset from available sources (e.g., seaborn’s built-in Titanic dataset or a CSV file).
 
-**3)Data Inspection:**
+### 3)Data Inspection:
 
 View the first few rows using head().
 
 Get dataset summary using info() and describe().
 
-**4)Handle Missing Data:**
+### 4)Handle Missing Data:
 Identify missing values using isnull().sum() and handle them appropriately (e.g., fill or drop).
 
-**5)Univariate Analysis:**
+### 5)Univariate Analysis:
 Perform univariate analysis for each variable:
 
 **Categorical Variables: (e.g., Sex, Pclass, Survived, Embarked)**
@@ -37,21 +36,87 @@ Use histograms, box plots, and summary statistics.
 Analyze distributions, central tendencies, and spread.
 Identify patterns (e.g., more passengers in 3rd class, survival differences by gender).
 
+### Program:
 
-**Program**
+**Name :NARESH.R
 
-**Name :
+Reg No.:212223240104
+```
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-Reg No.:**
+# Load dataset
+df = sns.load_dataset('titanic')
 
-**#Write your code here**
+print("First 5 Records:")
+display(df.head())
+df.shape
+df.isnull().sum()
+df.columns
+sns.countplot(x='sex', data=df)
+plt.title("Distribution of Gender")
+plt.pie(df['survived'].value_counts(),labels=['Survived', 'Not Survived'], 
+        autopct='%1.1f%%', startangle=90)
+plt.title('Survival Distribution')
+plt.axis('equal')
+plt.show()
+df['survived'].value_counts()
+df['survived'].mean()*100
+df['pclass'].value_counts()
+df['pclass'].value_counts().max()
+df['deck'].value_counts().max()
+df['embarked'].value_counts()
+df['age'].mean()
+sns.histplot(df['age'].dropna(), kde=True)
+plt.title("Distribution of Passenger Age")
+plt.xlabel("Age")
+plt.ylabel("Count")
+plt.show()
+df['age'].skew()
+sns.boxplot(x=df['fare'])
+plt.title("Boxplot of Fare")
+plt.show()
+sns.histplot(df['fare'].dropna(), kde=True)
+plt.title("Distribution of Passenger Age")
+plt.xlabel("Age")
+plt.ylabel("Count")
+plt.show()
+df['fare'].median()
+df['pclass'].value_counts()
+df['fare'].mean()
+
+
+```
+### Output:
+
+<img width="1603" height="350" alt="image" src="https://github.com/user-attachments/assets/e711a1e3-2c4a-4bf0-a5e2-ef5ff6f5d294" />
+
+<img width="218" height="726" alt="image" src="https://github.com/user-attachments/assets/7d80c472-6925-41ee-b1d2-6232ff5dbdcb" />
+
+<img width="648" height="514" alt="image" src="https://github.com/user-attachments/assets/9cadd25a-1ab0-4cc1-a320-429e9a85cf74" />
+
+<img width="604" height="475" alt="image" src="https://github.com/user-attachments/assets/8e5e2245-eef3-4510-8201-94aa84d3a80c" />
+
+<img width="237" height="190" alt="image" src="https://github.com/user-attachments/assets/b477740f-f29b-4f84-9f76-0874d3372cee" />
+
+<img width="227" height="197" alt="image" src="https://github.com/user-attachments/assets/2251c478-b8b2-48f7-bd4d-2071cac5b3a8" />
+
+<img width="481" height="653" alt="image" src="https://github.com/user-attachments/assets/4fe0f0c3-fccd-4238-a8b1-61a1b86cebc7" />
+
+<img width="642" height="514" alt="image" src="https://github.com/user-attachments/assets/af0d88e7-9692-475e-97ff-a76a1799f485" />
+
+<img width="589" height="510" alt="image" src="https://github.com/user-attachments/assets/49f74a15-0359-4d02-97cf-e0365216d682" />
+
+<img width="647" height="513" alt="image" src="https://github.com/user-attachments/assets/32b865cf-06f0-4b3c-8d0a-83d880dc90a9" />
+
+<img width="792" height="592" alt="image" src="https://github.com/user-attachments/assets/48b503c8-9e0b-4063-9d36-3d1f8224ed27" />
 
 
 
-**Output**
 
-
-**Result**
+### Result:
 From the univariate analysis:
 
 Majority of passengers were male and in 3rd class.
