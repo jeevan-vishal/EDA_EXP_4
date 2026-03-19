@@ -1,5 +1,7 @@
 # EDA EXP 4:   Titanic Survival Analysis using Univariate Analysis
 
+### Name:Jeevan Vishal.G.D
+### Reg No:212224240062
 ### Aim:
 
 To perform univariate analysis on the Titanic dataset to understand the distribution and characteristics of individual variables (such as Age, Sex, Pclass, Fare, and Survived) and to draw insights about passengers and their survival patterns.
