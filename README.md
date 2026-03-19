@@ -38,9 +38,6 @@ Identify patterns (e.g., more passengers in 3rd class, survival differences by g
 
 ### Program:
 
-**Name :NARESH.R
-
-Reg No.:212223240104
 ```
 import pandas as pd
 import numpy as np
